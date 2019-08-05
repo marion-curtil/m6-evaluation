@@ -13,6 +13,10 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
 
+    // MARK: - Dependancies
+    var viewModel: DetailViewModel?
+
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,19 +24,37 @@ class DetailViewController: UIViewController {
         navigationItem.leftItemsSupplementBackButton = true
     }
 
-    func setup(with model: ImageTextCellModel) {
+    // MARK: - Public API
+    func setup(pronunciation: String, imageUrlString: String) {
         if !isViewLoaded {
             loadView()
         }
+        imageView.isHidden = false
         imageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
-        imageView.sd_setImage(with: model.imageUrl)
+        imageView.sd_setImage(with: URL(string: imageUrlString))
         label.isHidden = false
-        label.text = model.text
+        label.text = pronunciation
+    }
+
+    // MARK: - Private helpers
+    private func fetchData() {
+        viewModel?.getKanji(onCompletion: { [weak self] kanji in
+            if let kanji = kanji {
+                self?.setup(pronunciation: kanji.pronunciation, imageUrlString: kanji.imageUrlString)
+            } else if let errorMessage = self?.viewModel?.errorMessage {
+                self?.label.isHidden = true
+                self?.imageView?.isHidden = true
+                self?.presentAlert(with: errorMessage, retryAction: { _ in
+                    self?.fetchData()
+                })
+            }
+        })
     }
 }
 
 extension DetailViewController: SelectionDelegate {
     func selected(_ model: ImageTextCellModel) {
-        setup(with: model)
+        viewModel?.setup(with: model)
+        fetchData()
     }
 }

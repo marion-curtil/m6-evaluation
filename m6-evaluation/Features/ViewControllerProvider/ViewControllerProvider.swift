@@ -28,7 +28,7 @@ struct ViewControllerProvider {
 
     static var masterNavigation: UINavigationController {
         let masterViewController = MasterViewController()
-        let viewModel = MasterViewModel(kanjiService: KanjiService())
+        let viewModel = MasterViewModel(kanjiListService: KanjiListService())
         masterViewController.viewModel = viewModel
         let masterNavigationController = UINavigationController(rootViewController: masterViewController)
 
@@ -37,6 +37,8 @@ struct ViewControllerProvider {
 
     static var detailNavigation: UINavigationController {
         let detailViewController = DetailViewController()
+        let viewModel = DetailViewModel(kanjiService: KanjiService())
+        detailViewController.viewModel = viewModel
         let detailNavigationController = UINavigationController(rootViewController: detailViewController)
 
         return detailNavigationController

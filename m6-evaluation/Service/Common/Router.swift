@@ -14,6 +14,9 @@ enum RequestMethod: String {
 }
 
 protocol Router {
+    /// The request parameters for current route
+    var parameters: [String: String]? { get }
+
     /// url for the current route
     var urlString: String { get }
 
@@ -26,9 +29,20 @@ protocol Router {
 
 extension Router {
     var urlRequest: URLRequest? {
-        guard let url = URL(string: urlString) else { return nil }
+        guard let url = URLComponents(string: urlString) else { return nil }
 
-        var request = URLRequest(url: url)
+        var urlComponents = url
+        if let parameters = parameters {
+            var queryItems: [URLQueryItem] = []
+            parameters.forEach { (arg) in
+                queryItems.append(URLQueryItem(name: arg.0, value: arg.1))
+            }
+            urlComponents.queryItems = queryItems
+        }
+
+        guard let parametrisedUrl = urlComponents.url else { return nil }
+
+        var request = URLRequest(url: parametrisedUrl)
         request.httpMethod = method.rawValue
 
         return request

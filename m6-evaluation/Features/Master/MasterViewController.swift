@@ -84,21 +84,13 @@ class MasterViewController: UITableViewController {
         return cell
     }
 
-    // MARK: - Alert
-    private func presentAlert(with message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(.init(title: "OK", style: .default, handler: nil))
-        alert.addAction(.init(title: "Retry", style: .default, handler: { [weak self] _ in
-            self?.fetchData()
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
-
     // MARK: - Private helpers
     private func fetchData() {
         viewModel?.getKanjis { [weak self] in
             if let errorMessage = self?.viewModel?.errorMessage {
-                self?.presentAlert(with: errorMessage)
+                self?.presentAlert(with: errorMessage, retryAction: { _ in
+                    self?.fetchData()
+                })
             } else {
                 self?.tableView.reloadData()
                 if let defaultIndexPath = self?.defaultIndexPath {

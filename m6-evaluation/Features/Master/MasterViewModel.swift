@@ -10,7 +10,7 @@ import Foundation
 
 class MasterViewModel {
     // MARK: - Dependencies
-    private let kanjiService: KanjiService
+    private let kanjiListService: KanjiListService
 
     // MARK: - Properties
     var dataSource: [[ImageTextCellModel]] = [] {
@@ -22,13 +22,13 @@ class MasterViewModel {
     }
     var errorMessage: String?
 
-    init(kanjiService: KanjiService) {
-        self.kanjiService = kanjiService
+    init(kanjiListService: KanjiListService) {
+        self.kanjiListService = kanjiListService
     }
 
     // MARK: - Public API
     func getKanjis(onCompletion: @escaping () -> Void) {
-        kanjiService.call(completionHandler: { [weak self] result in
+        kanjiListService.call(completionHandler: { [weak self] result in
             switch result {
             case let .success(kanjis):
                 self?.dataSource = self?.prepareDataSource(kanjis: kanjis) ?? []
@@ -40,7 +40,7 @@ class MasterViewModel {
     }
 
     // MARK: - Datasource et error preparation
-    private func prepareDataSource(kanjis: [Kanji]) -> [[ImageTextCellModel]] {
+    private func prepareDataSource(kanjis: [KanjiListItem]) -> [[ImageTextCellModel]] {
         let cellModels = kanjis.map { ImageTextCellModel(imageUrl: URL(string: $0.imageUrlString), text: $0.name) }
 
         return [cellModels]

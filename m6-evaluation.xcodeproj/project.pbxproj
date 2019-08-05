@@ -10,7 +10,7 @@
 		40205BC522F3500200506DC2 /* MasterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40205BC422F3500200506DC2 /* MasterViewModel.swift */; };
 		40205BC722F3513100506DC2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40205BC622F3513100506DC2 /* Result.swift */; };
 		40205BC922F358AC00506DC2 /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40205BC822F358AC00506DC2 /* URLSessionManager.swift */; };
-		40205BCB22F3644B00506DC2 /* Kanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40205BCA22F3644B00506DC2 /* Kanji.swift */; };
+		40205BCB22F3644B00506DC2 /* KanjiListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40205BCA22F3644B00506DC2 /* KanjiListItem.swift */; };
 		40205BCD22F3688400506DC2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40205BCC22F3688400506DC2 /* Router.swift */; };
 		4071A84822F0648100CDDD37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4071A84722F0648100CDDD37 /* AppDelegate.swift */; };
 		4071A84F22F0648200CDDD37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4071A84E22F0648200CDDD37 /* Assets.xcassets */; };
@@ -26,8 +26,13 @@
 		4071A88B22F0F8EB00CDDD37 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4071A88922F0F8EB00CDDD37 /* DetailViewController.xib */; };
 		4071A88D22F1840900CDDD37 /* SelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4071A88C22F1840900CDDD37 /* SelectionDelegate.swift */; };
 		4071A88F22F1B1CF00CDDD37 /* IUDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4071A88E22F1B1CF00CDDD37 /* IUDevice+Extension.swift */; };
-		40EB89A522F22D90003BE52C /* KanjiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB89A422F22D90003BE52C /* KanjiRouter.swift */; };
-		40EB89A722F22D9D003BE52C /* KanjiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB89A622F22D9D003BE52C /* KanjiService.swift */; };
+		40D33EEE22F87E040048C561 /* KanjiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D33EED22F87E040048C561 /* KanjiService.swift */; };
+		40D33EF022F87E120048C561 /* KanjiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D33EEF22F87E110048C561 /* KanjiRouter.swift */; };
+		40D33EF222F87E1F0048C561 /* Kanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D33EF122F87E1F0048C561 /* Kanji.swift */; };
+		40D33EF422F8854F0048C561 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D33EF322F8854F0048C561 /* DetailViewModel.swift */; };
+		40D33EF622F88B490048C561 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D33EF522F88B490048C561 /* UIViewController+Extension.swift */; };
+		40EB89A522F22D90003BE52C /* KanjiListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB89A422F22D90003BE52C /* KanjiListRouter.swift */; };
+		40EB89A722F22D9D003BE52C /* KanjiListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB89A622F22D9D003BE52C /* KanjiListService.swift */; };
 		40EB89AA22F235E2003BE52C /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EB89A922F235E2003BE52C /* SDWebImage.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +50,7 @@
 		40205BC422F3500200506DC2 /* MasterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewModel.swift; sourceTree = "<group>"; };
 		40205BC622F3513100506DC2 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		40205BC822F358AC00506DC2 /* URLSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
-		40205BCA22F3644B00506DC2 /* Kanji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kanji.swift; sourceTree = "<group>"; };
+		40205BCA22F3644B00506DC2 /* KanjiListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiListItem.swift; sourceTree = "<group>"; };
 		40205BCC22F3688400506DC2 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4071A84422F0648100CDDD37 /* m6-evaluation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "m6-evaluation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4071A84722F0648100CDDD37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,8 +70,13 @@
 		4071A88922F0F8EB00CDDD37 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		4071A88C22F1840900CDDD37 /* SelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionDelegate.swift; sourceTree = "<group>"; };
 		4071A88E22F1B1CF00CDDD37 /* IUDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IUDevice+Extension.swift"; sourceTree = "<group>"; };
-		40EB89A422F22D90003BE52C /* KanjiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRouter.swift; sourceTree = "<group>"; };
-		40EB89A622F22D9D003BE52C /* KanjiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiService.swift; sourceTree = "<group>"; };
+		40D33EED22F87E040048C561 /* KanjiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiService.swift; sourceTree = "<group>"; };
+		40D33EEF22F87E110048C561 /* KanjiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRouter.swift; sourceTree = "<group>"; };
+		40D33EF122F87E1F0048C561 /* Kanji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kanji.swift; sourceTree = "<group>"; };
+		40D33EF322F8854F0048C561 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		40D33EF522F88B490048C561 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		40EB89A422F22D90003BE52C /* KanjiListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiListRouter.swift; sourceTree = "<group>"; };
+		40EB89A622F22D9D003BE52C /* KanjiListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiListService.swift; sourceTree = "<group>"; };
 		40EB89A922F235E2003BE52C /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,14 +109,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		40205BCF22F36AA600506DC2 /* Kanji */ = {
+		40205BCF22F36AA600506DC2 /* KanjiList */ = {
 			isa = PBXGroup;
 			children = (
-				40EB89A622F22D9D003BE52C /* KanjiService.swift */,
-				40205BCA22F3644B00506DC2 /* Kanji.swift */,
-				40EB89A422F22D90003BE52C /* KanjiRouter.swift */,
+				40EB89A622F22D9D003BE52C /* KanjiListService.swift */,
+				40205BCA22F3644B00506DC2 /* KanjiListItem.swift */,
+				40EB89A422F22D90003BE52C /* KanjiListRouter.swift */,
 			);
-			path = Kanji;
+			path = KanjiList;
 			sourceTree = "<group>";
 		};
 		4071A83B22F0648100CDDD37 = {
@@ -175,6 +185,7 @@
 			children = (
 				4071A88822F0F8EB00CDDD37 /* DetailViewController.swift */,
 				4071A88922F0F8EB00CDDD37 /* DetailViewController.xib */,
+				40D33EF322F8854F0048C561 /* DetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -220,14 +231,26 @@
 			isa = PBXGroup;
 			children = (
 				4071A88E22F1B1CF00CDDD37 /* IUDevice+Extension.swift */,
+				40D33EF522F88B490048C561 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		40D33EEC22F87DA10048C561 /* Kanji */ = {
+			isa = PBXGroup;
+			children = (
+				40D33EED22F87E040048C561 /* KanjiService.swift */,
+				40D33EEF22F87E110048C561 /* KanjiRouter.swift */,
+				40D33EF122F87E1F0048C561 /* Kanji.swift */,
+			);
+			path = Kanji;
 			sourceTree = "<group>";
 		};
 		40EB89A322F22C88003BE52C /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				40205BCF22F36AA600506DC2 /* Kanji */,
+				40D33EEC22F87DA10048C561 /* Kanji */,
+				40205BCF22F36AA600506DC2 /* KanjiList */,
 				40205BCE22F36A9F00506DC2 /* Common */,
 			);
 			path = Service;
@@ -365,11 +388,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40D33EF022F87E120048C561 /* KanjiRouter.swift in Sources */,
 				4071A88A22F0F8EB00CDDD37 /* DetailViewController.swift in Sources */,
 				4071A87022F0695800CDDD37 /* MasterViewController.swift in Sources */,
+				40D33EF422F8854F0048C561 /* DetailViewModel.swift in Sources */,
 				4071A84822F0648100CDDD37 /* AppDelegate.swift in Sources */,
-				40205BCB22F3644B00506DC2 /* Kanji.swift in Sources */,
-				40EB89A722F22D9D003BE52C /* KanjiService.swift in Sources */,
+				40205BCB22F3644B00506DC2 /* KanjiListItem.swift in Sources */,
+				40EB89A722F22D9D003BE52C /* KanjiListService.swift in Sources */,
 				40205BC722F3513100506DC2 /* Result.swift in Sources */,
 				4071A87822F06E1200CDDD37 /* ImageTextCellModel.swift in Sources */,
 				40205BC522F3500200506DC2 /* MasterViewModel.swift in Sources */,
@@ -377,10 +402,13 @@
 				4071A86C22F0679600CDDD37 /* RootViewController.swift in Sources */,
 				40205BC922F358AC00506DC2 /* URLSessionManager.swift in Sources */,
 				4071A87422F06DDB00CDDD37 /* ImageTextCell.swift in Sources */,
+				40D33EEE22F87E040048C561 /* KanjiService.swift in Sources */,
 				4071A88F22F1B1CF00CDDD37 /* IUDevice+Extension.swift in Sources */,
 				4071A88022F0C89000CDDD37 /* ViewControllerProvider.swift in Sources */,
-				40EB89A522F22D90003BE52C /* KanjiRouter.swift in Sources */,
+				40EB89A522F22D90003BE52C /* KanjiListRouter.swift in Sources */,
+				40D33EF622F88B490048C561 /* UIViewController+Extension.swift in Sources */,
 				4071A88D22F1840900CDDD37 /* SelectionDelegate.swift in Sources */,
+				40D33EF222F87E1F0048C561 /* Kanji.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
